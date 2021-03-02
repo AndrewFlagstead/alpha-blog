@@ -16,3 +16,14 @@
   letter-spacing: -1px;
   font-weight: bold;
 }
+
+#home-container {
+  margin-top: 25px;
+}
+
+#home-jumbotron {
+  background-image: asset-url('jumbotron-background');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
