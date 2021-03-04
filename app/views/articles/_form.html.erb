@@ -1,26 +1,36 @@
-<% if @article.errors.any? %>
-  <h2>The following errors prevent the creation of an article</h2>
-  <ul>
-    <% @article.errors.full_messages do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_with(model: @article, local: true) do |f| %>
-  <p>
-    <%= f.label :title, class: "form-label col-2"%>
+<div class="container">
+  <% if @article.errors.any? %>
+    <h2>The following errors prevent the creation of an article</h2>
+    <ul>
+      <% @article.errors.full_messages do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <div class="row justify-content-center">
     <div class="col-10">
-      <%= f.text_field :title, class: "form-control"%>
+      <%= form_with(model: @article, class: "shadow-sm mb-5 bg-body rounded p-5", id: "create-edit-form", local: true) do |f| %>
+        <div class="form-group row">
+          <%= f.label :title, class: "form-label col-2"%>
+          <div class="col-10">
+            <%= f.text_field :title, class: "form-control shadow rounded", placeholder: "Title of Article" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :description, class: "col-2 form-label"%>
+          <div class="col-10">
+            <%= f.text_area :description, rows: 10, class: "form-control shadow rounded", placeholder: "Description of Article" %>
+          </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+          <%= f.submit class: "btn btn-primary text-white" %>
+        </div>
+      <%end%>
     </div>
-  </p>
-
-  <p>
-    <%= f.label :description%>
-    <%= f.text_area :description%>
-  </p>
-
-  <p>
-    <%= f.submit%>
-  <p>
-<%end%>
+  </div> 
+  <div class="row justify-content-center">
+    <%= link_to 'Back', articles_path, class: "btn btn-success text-white"%>
+  </div>
+</div>
