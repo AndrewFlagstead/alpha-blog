@@ -1,4 +1,9 @@
 <h1 class="text-center mt-4">AlphaBlog Users</h1>
+<div class="pagination-wrapper" >
+  <div class="digg_pagination">
+    <%= will_paginate @users, class: "text-center" %>
+  </div>
+</div>
 <div class="container">
   <% @users.each do |user| %>
     <div class="row justify-content-md-center">
@@ -22,4 +27,9 @@
       </div>
     </div>
   <% end %>
+</div>
+<div class="pagination-wrapper">
+  <div class="digg_pagination mb-3">
+    <%= will_paginate @articles %>
+  </div>
 </div>

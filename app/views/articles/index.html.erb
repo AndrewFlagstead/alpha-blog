@@ -1,2 +1,12 @@
 <h1 class="text-center mt-4">Articles</h1>
+<div class="pagination-wrapper" >
+  <div class="digg_pagination">
+    <%= will_paginate @articles, class: "text-center" %>
+  </div>
+</div>
 <%= render 'article' %>
+<div class="pagination-wrapper">
+  <div class="digg_pagination mb-3">
+    <%= will_paginate @articles %>
+  </div>
+</div>
