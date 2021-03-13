@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
     if @user.update(user_params)
       flash[:notice] = "Account Updated"
-      redirect_to root_path
+      redirect_to @user
     else
       render 'edit'
     end
@@ -32,6 +32,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @articles = @user.articles
+  end
+
+  def index 
+    @users = User.all
   end
 
   private 
