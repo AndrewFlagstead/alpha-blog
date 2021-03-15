@@ -10,16 +10,22 @@
       <div class="col-8 mt-4">
         <div class="card text-center shadow-sm mb-5 bg-body rounded">
           <div class="card-header fst-italic">
-           <%= link_to user.username, user %>
+           <%= link_to user.username, user_path(user) %>
           </div>
           <div class="card-body">
             <h5 class="card-title">
-              <%= link_to gravitar_for(user, size: 100)%>
+              <%= link_to gravitar_for(user, size: 100), user_path(user) %>
             </h5>
             <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
-            <%= link_to "View Profile", user, class: "btn btn-primary text-white" %>
-            <% if user.id == session[:user_id] %>
-              <%= link_to "Edit Profile", edit_user_path(user), class: "btn btn-success text-white" %>
+            <%= link_to "View Profile", user_path(user), class: "btn btn-primary text-white" %>
+            <% if logged_in?%>
+              <% if user.id == session[:user_id] %>
+                <%= link_to "Edit Profile", edit_user_path(user), class: "btn btn-success text-white" %>
+              <% end %>
+              <% if current_user.admin? %>
+                <%= link_to "Delete User", user_path(user), class: "btn btn-danger text-white", method: :delete,
+                        data: { confirm: "Are you sure? This will delete the user and their articles!" } %>
+              <% end %>
             <% end %>
           </div>
           <div class="card-footer text-muted">
