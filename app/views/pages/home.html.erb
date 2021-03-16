@@ -4,6 +4,10 @@
     <p class="lead">This is a simple CRUD Ruby on Rails website, using Bootstrap for styling.</p>
     <hr class="my-4">
     <p>You can create a profile, create articles, view other users, and browse articles.</p>
-    <%= link_to "Sign Up!", signup_path, class: "btn btn-primary btn-lg text-white" %>
+    <% if logged_in? %>
+      <%= link_to "View Articles", articles_path, class: "btn btn-primary btn-lg text-white" %>
+    <% else %>
+      <%= link_to "Sign Up!", signup_path, class: "btn btn-primary btn-lg text-white" %>
+    <% end %>
   </div>
 </div>
