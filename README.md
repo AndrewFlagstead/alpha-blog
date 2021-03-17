@@ -1,4 +1,4 @@
-# README
+# AlphaBlog
 
 This is a web app that features CRUD and authentication functionality developed using Ruby on Rails.
 
