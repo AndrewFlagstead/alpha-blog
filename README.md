@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a web app that features CRUD and authentication functionality developed using Ruby on Rails.
 
-Things you may want to cover:
+It is deployed using Heroku [here.](https://andrewflagstead-alphablog.herokuapp.com/).
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A good way to contact me is via email at [andrewflagstead@gmail.com](andrewflagstead@gmail.com).
